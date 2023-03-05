@@ -2,7 +2,7 @@
 sentence = input('Enter a sentece:')
 # asking for a sentence
 
-def removal(setning):
+def word_count(setning):
     setning = setning.strip()
     # clearing the sentence of unwanted white spaces
     symbols = ['!', '@', '#', '$', '%', '^', '&','*','(',')','-', '/', '?', ',', '.']
@@ -31,5 +31,37 @@ def removal(setning):
         print(f'{key} : {value}' )
     # printing each word with it's respective frequency in a visually understandable way
 
-removal(sentence)
+word_count(sentence)
 # calling the function 
+
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+# ALTERNATIVE
+#============================================================================================================================================
+from collections import Counter
+
+def collections_word_counting(setning):
+    setning = setning.strip()
+    # clearing the sentence of unwanted white spaces
+    symbols = ['!', '@', '#', '$', '%', '^', '&','*','(',')','-', '/', '?', ',', '.']
+    
+    for symbol in symbols:
+        if symbol in setning:
+            setning =  setning.replace(symbol, '')
+        else: pass
+    # removing symbols, to prevent 'em of being counted as words
+    setning = setning.upper().split(' ')
+
+    word_count_pair = Counter(setning).most_common(len(setning))
+    # a list of tuples that contain each word and it's total count
+    count = 0
+    # functions as an index
+    for i in word_count_pair:
+        # looping through the tuple list 
+        print(f'{count}) {i}')
+        # printing each pair and an index
+        count += 1
+        # increment the index for the next iteration
+    
+# remember to call the function
