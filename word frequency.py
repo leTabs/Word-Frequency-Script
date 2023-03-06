@@ -59,7 +59,7 @@ def collections_word_counting(setning):
     # functions as an index
     for i in word_count_pair:
         # looping through the tuple list 
-        print(f'{count}) {i}')
+        print(f'{count}) {i[0]}  :{i[1]}')
         # printing each pair and an index
         count += 1
         # increment the index for the next iteration
